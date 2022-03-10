@@ -1,0 +1,6 @@
+{
+    "project_name": "project",
+    "full_name": "Michiel Cottaar",
+    "include_figures": ["y", "n"],
+    "include_pipeline": ["y", "n"]
+}

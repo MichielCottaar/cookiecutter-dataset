@@ -1,0 +1,10 @@
+
+* annex.backend=MD5E
+**/.git* annex.largefiles=nothing
+*.md annex.largefiles=nothing
+*.sh annex.largefiles=nothing
+*.py annex.largefiles=nothing
+{%- if cookiecutter.include_figures == "y" -%}
+*.ipynb annex.largefiles=nothing
+*.svg annex.largefiles=nothing
+{%- endif -%}
