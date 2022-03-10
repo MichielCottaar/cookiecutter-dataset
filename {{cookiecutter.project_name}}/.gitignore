@@ -1,2 +1,5 @@
 .ipynb_checkpoints
 *.py[co]
+{%- if cookiecutter.include_pipeline == "y" -%}
+log/
+{%- endif -%}
