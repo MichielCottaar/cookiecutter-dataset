@@ -28,6 +28,7 @@ The main pipeline can be run using `pipe/main.py`. Run `pipe/main.py --help` for
 Images are created by running one of three scripts. Each script will call the next one in the sequence:
 - `pipe/generate.sh`: executes all the notebooks and python scripts. Running this will require access to a lot of the underlying data. Note that notebooks are run from the directory they are in, while python scripts are run from the top-level directory. Output SVG images can be stored locally or in the `raw` directory.
 - `pipe/convert.sh`: exports the SVG files in `inkscape` and `notebooks` as PNGs in `final`. This script should be able to run without direct access to the {{cookiecutter.project_name}} data.
-- `pipe/to_vault.sh`: copies the PNG output to my Obsidian vault of notes. All images will be copied to "${VAULT}/attachments/{{cookiecutter.project_name}}" and prepended with "{{cookiecutter.project_name}}_".
+- `pipe/to_vault.sh`: copies the PNG output to my Obsidian vault of notes. All images will be copied to "${VAULT}/attachments/{{cookiecutter.project_name}}" and prepended with "{{cookiecutter.project_name}}".
+{%- endif -%}
 
 All scripts are expected to run from the top-level directory.
