@@ -1,4 +1,1 @@
-{%- if cookiecutter.include_pipeline == "y" -%}
-data.tree
-    # include pipeline output files here
-{%- endif -%}
+# describe filestructure in here using FileTree format
