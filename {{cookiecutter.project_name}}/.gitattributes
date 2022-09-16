@@ -4,6 +4,8 @@
 *.md annex.largefiles=nothing
 *.sh annex.largefiles=nothing
 *.py annex.largefiles=nothing
+*.tree annex.largefiles=nothing
+*.txt annex.largefiles=nothing
 {%- if cookiecutter.include_figures == "y" -%}
 *.ipynb annex.largefiles=nothing
 *.svg annex.largefiles=nothing
