@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import os
+from subprocess import run
 
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 
@@ -18,3 +19,7 @@ if __name__ == "__main__":
         remove_file('pipe/to_vault.sh')
     if "{{ cookiecutter.include_pipeline }}" == "n":
         remove_file('pipe/main.py')
+    run(["datalad", "create", "-f", "."])
+    run(["datalad", "save", "-m", "Initial dataset setup from cookiecutter"])
+    run(["datalad", "create-sibling-ria", "-s", "origin", os.getenv("RIA")])
+    run(["datalad", "push", "--to", "origin"])
