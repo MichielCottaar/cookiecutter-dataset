@@ -19,7 +19,9 @@ if __name__ == "__main__":
         remove_file('pipe/to_vault.sh')
     if "{{ cookiecutter.include_pipeline }}" == "n":
         remove_file('pipe/main.py')
-    run(["datalad", "create", "-f", "."])
-    run(["datalad", "save", "-m", "Initial dataset setup from cookiecutter"])
-    run(["datalad", "create-sibling-ria", "-s", "origin", os.getenv("RIA")])
-    run(["datalad", "push", "--to", "origin"])
+
+    dl = ["conda", "run", "-n", "datalad", "datalad"]
+    run(dl + ["create", "-f", "."])
+    run(dl + ["save", "-m", "Initial dataset setup from cookiecutter"])
+    run(dl + ["create-sibling-ria", "-s", "origin", os.getenv("RIA")])
+    run(dl + ["push", "--to", "origin"])
