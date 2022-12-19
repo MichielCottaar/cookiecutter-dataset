@@ -23,5 +23,9 @@ if __name__ == "__main__":
     dl = ["datalad"]
     run(dl + ["create", "-f", "."])
     run(dl + ["save", "-m", "Initial dataset setup from cookiecutter"])
-    run(dl + ["create-sibling-ria", "-s", "origin", os.getenv("RIA")])
-    run(dl + ["push", "--to", "origin"])
+    run(dl + ["create-sibling-gitlab", "--project", f"ndcn0236/{{ cookiecutter.project_name }}", "--site", "win"])
+    run([
+        "git", "annex", "initremote", "onedrive", "type=external", "externaltype=rclone", 
+        "chunk=50MiB", "encryption=none", "target=onedrive_crypt",
+    ])
+    run(dl + ["push", "--to", "win"])
