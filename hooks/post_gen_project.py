@@ -26,5 +26,5 @@ if __name__ == "__main__":
     run(dl + ["save", "-m", "Initial dataset setup from cookiecutter"])
     ria = os.getenv("RIA")
     run(dl + ["create-sibling-ria", "-s", "laptop", "-d", ".", ria])
-    run(dl + ["create-sibling-gitlab", "--project", f"ndcn0236/{{ cookiecutter.project_name }}", "--site", "win", "--publish-depends=laptop", "--access", "ssh"])
-    run(dl + ["push", "--to", "win"])
+    #run(dl + ["create-sibling-gitlab", "--project", f"ndcn0236/{{ cookiecutter.project_name }}", "--site", "win", "--publish-depends=laptop", "--access", "ssh"])
+    run(dl + ["push", "--to", "laptop"])
