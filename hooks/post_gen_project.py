@@ -21,8 +21,7 @@ if __name__ == "__main__":
         remove_file('pipe/main.py')
 
     dl = ["datalad"]
-    top_level = run("git rev-parse --show-toplevel".split(), capture_output=True).stdout.decode().strip()
-    run(dl + ["create", "-f", ".", "-d", top_level])
+    run(dl + ["create", "-f", "."])
     run(dl + ["save", "-m", "Initial dataset setup from cookiecutter"])
     ria = os.getenv("RIA")
     run(dl + ["create-sibling-ria", "-s", "laptop", "-d", ".", ria])
